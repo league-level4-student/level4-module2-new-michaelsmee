@@ -14,12 +14,12 @@ public class GenericsVsObjects {
         GenericsList<String> generics = new GenericsList<String>();
         generics.add("Bob");
         generics.add("Anne");
-        generics.add(5);
+       // generics.add(5); ==> the list is defined as type string so it will not accept an integer value
         generics.add("Tom");
 
         /*
          * Why don't we have the same error here? This is because any
-         * object(String,Integer,etc) falls under the Object class
+         * object(String,Integer,etc) falls under the Object class ==> not defined as one type
          */
         ObjectsList objects = new ObjectsList();
         objects.add("Bob");
@@ -35,7 +35,7 @@ public class GenericsVsObjects {
             System.out.println(s);
         }
         for (int i = 0; i < objects.length(); i++) {
-            String s = (String) objects.get(i);
+            String s = objects.get(i).toString();
             System.out.println(s);
         }
 
