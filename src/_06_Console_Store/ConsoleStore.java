@@ -1,9 +1,14 @@
 package _06_Console_Store;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ConsoleStore {
@@ -141,23 +146,37 @@ public class ConsoleStore {
     }
 
     
-    public void showCart(ArrayList<String>fruitList) {
+    public void showCart(ArrayList<String>fruitList) throws IOException {
     	JFrame frame = new JFrame();
     	JPanel panel = new JPanel();
+    	
     	frame.add(panel);
     	frame.setVisible(true);
+    	
+    	
+    
+    	
+    	
     	for(int i = 0; i < fruitList.size(); i++) {
     		if(fruitList.get(i).equals("apple")) {
-    			panel.add();
+    			BufferedImage wPic1 = ImageIO.read(this.getClass().getResource("appleImage.jpg"));
+    	    	JLabel wIcon1 = new JLabel(new ImageIcon(wPic1));
+    			panel.add(wIcon1);
     		}
     		else if (fruitList.get(i).equals("orange")) {
-    			panel.add();
+    			BufferedImage wPic2 = ImageIO.read(this.getClass().getResource("cherryImage.jpg"));
+    	    	JLabel wIcon2 = new JLabel(new ImageIcon(wPic2));
+    			panel.add(wIcon2);
     		}
     		else if (fruitList.get(i).equals("cherry")) {
-    			panel.add();
+    			BufferedImage wPic3 = ImageIO.read(this.getClass().getResource("mangoImage.jpg"));
+    	    	JLabel wIcon3 = new JLabel(new ImageIcon(wPic3));
+    			panel.add(wIcon3);
     		}
     		else if(fruitList.get(i).equals("mango")){
-    			panel.add();
+    			BufferedImage wPic4 = ImageIO.read(this.getClass().getResource("orangeImage.jpg"));
+    	    	JLabel wIcon4 = new JLabel(new ImageIcon(wPic4));
+    			panel.add(wIcon4);
     		}
     	}
     }
